@@ -1,0 +1,19 @@
+body {
+    background-color: #EEE;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    margin: calc(50vh - 150px) auto 0;
+    background: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 3px #CCC;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+    cursor: pointer;
+}
