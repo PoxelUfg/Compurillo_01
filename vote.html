@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vote state</title>
+</head>
+<body>
+  <div id="dibujoMostrado">
+    <p>Dibujo del jugador: <span id="nombreJugador"></span></p>
+    <canvas id="canvasVoto"></canvas>
+  </div>
+
+  <div id="votacion">
+    <p>Califica este dibujo:</p>
+    <div id="estrellas">
+      <span data-valor="1">⭐</span>
+      <span data-valor="2">⭐</span>
+      <span data-valor="3">⭐</span>
+      <span data-valor="4">⭐</span>
+      <span data-valor="5">⭐</span>
+    </div>
+    <button id="enviarVoto" disabled>Enviar Voto</button>
+  </div>
+
+  <!-- ✅ Agrega el script al final -->
+  <script src="js/vote.js"></script>
+</body>
+</html>

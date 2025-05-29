@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego - Dibuja el Componente</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>¡Hora de Dibujar!</h1>
+
+    <div id="infoJugador">
+        Jugador: <span id="nombreJugador">Carlos</span> <!-- Aquí luego cambiaremos dinámicamente -->
+    </div>
+
+    <div id="palabraJuego">
+        Palabra a dibujar: <strong id="palabra"></strong>
+    </div>
+
+    <div id="cronometro">
+        Tiempo: 60s
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div>
+        <button id="limpiar">Limpiar Canvas</button>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

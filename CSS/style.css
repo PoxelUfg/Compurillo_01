@@ -1,19 +1,38 @@
 body {
     background-color: #EEE;
     font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
 }
 
 canvas {
     display: block;
-    margin: 0 auto;
-    margin: calc(50vh - 150px) auto 0;
+    margin: 20px auto;
     background: #FFF;
-    border-radius: 3px;
-    box-shadow: 0 0 15px 3px #CCC;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #AAA;
+    cursor: crosshair;
+}
+
+#palabra {
+    font-size: 24px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-p {
-    text-align: center;
-    cursor: pointer;
+#cronometro {
+    font-size: 20px;
+    margin: 10px;
+    color: #333;
 }
