@@ -20,7 +20,7 @@ let indiceActual = 0;
 let votoSeleccionado = 0;
 
 // 🚀 Obtener los dibujos de la sala
-fetch(`http://localhost:3000/dibujos?salaId=${salaId}`)
+fetch(`https://compurillo01db-production.up.railway.app/dibujos?salaId=${salaId}`)
   .then(res => res.json())
   .then(data => {
     console.log("Dibujos recibidos:", data);
@@ -93,7 +93,7 @@ function actualizarEstrellasVisual() {
 enviarVotoBtn.addEventListener("click", () => {
   const dibujoId = dibujos[indiceActual].id;
 
-  fetch("http://localhost:3000/votos", {
+  fetch("https://compurillo01db-production.up.railway.app/votos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -123,7 +123,7 @@ function avanzar() {
 
     // 🔁 Esperar a que la sala pase a estado RESULTADOS
     const esperarResultados = setInterval(() => {
-      fetch(`http://localhost:3000/salas/${salaId}`)
+      fetch(`https://compurillo01db-production.up.railway.app/salas/${salaId}`)
         .then(res => res.json())
         .then(data => {
           if (data.estado === "RESULTADOS") {

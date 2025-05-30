@@ -17,7 +17,7 @@ let factorDeAlisamiento = 5;
 let Trazados = [];
 
 // ✅ Obtener palabra de la sala
-fetch(`http://localhost:3000/salas/${salaId}`)
+fetch(`https://compurillo01db-production.up.railway.app/salas/${salaId}`)
   .then(res => res.json())
   .then(data => {
     palabraElemento.textContent = data.palabra;
@@ -123,7 +123,7 @@ function enviarDibujo() {
 
   console.log("Base64 generado:", imagenBase64.substring(0, 100));
 
-  fetch("http://localhost:3000/dibujos", {
+  fetch("https://compurillo01db-production.up.railway.app/dibujos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -140,7 +140,7 @@ function enviarDibujo() {
       setTimeout(() => {
         console.log("Consultando estado de la sala:", salaId);
         const esperarVotacion = setInterval(() => {
-          fetch(`http://localhost:3000/salas/${salaId}`)
+          fetch(`https://compurillo01db-production.up.railway.app/salas/${salaId}`)
             .then(res => res.json())
             .then(data =>{
               console.log("Estado actual de la sala:", data.estado);

@@ -3,11 +3,11 @@ const salaId = 1; // TODO: luego puedes obtenerlo dinámicamente desde el backen
 const listaJugadores = document.getElementById("listaJugadores");
 const jugarBtn = document.getElementById("jugarBtn");
 
-localStorage.removeItem("jugadorId");
+
 // Crear jugador al entrar
 const nombreJugador = prompt("Ingresa tu nombre:");
 
-fetch("http://localhost:3000/jugadores", {
+fetch("https://compurillo01db-production.up.railway.app/jugadores", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -27,7 +27,7 @@ fetch("http://localhost:3000/jugadores", {
 
 // Obtener lista de jugadores
 function obtenerJugadores() {
-  fetch(`http://localhost:3000/jugadores?salaId=${salaId}`)
+  fetch(`https://compurillo01db-production.up.railway.app/jugadores?salaId=${salaId}`)
     .then(res => res.json())
     .then(jugadores => {
       listaJugadores.innerHTML = "";
@@ -42,7 +42,7 @@ function obtenerJugadores() {
 // Evento de "Jugar"
 jugarBtn.addEventListener("click", () => {
   // TODO: POST para cambiar estado de la sala a JUGANDO
-  fetch(`http://localhost:3000/salas/${salaId}/estado`, {
+  fetch(`https://compurillo01db-production.up.railway.app/salas/${salaId}/estado`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
@@ -56,7 +56,7 @@ jugarBtn.addEventListener("click", () => {
 });
 
 setInterval(() => {
-  fetch(`http://localhost:3000/salas/${salaId}`)
+  fetch(`https://compurillo01db-production.up.railway.app/salas/${salaId}`)
     .then(res => res.json())
     .then(data => {
       if (data.estado === "JUGANDO") {

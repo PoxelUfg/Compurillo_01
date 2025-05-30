@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const puntuacionElem = document.getElementById("puntuacionGanador");
   const volverBtn = document.getElementById("volverLobby");
 
-  fetch(`http://localhost:3000/resultados?salaId=${salaId}`)
+  fetch(`https://compurillo01db-production.up.railway.app/resultados?salaId=${salaId}`)
     .then(res => res.json())
     .then(data => {
       console.log("Resultado recibido:", data);
