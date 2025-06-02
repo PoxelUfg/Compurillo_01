@@ -1,38 +1,165 @@
+/* ==============================================================
+   CSS/style.css — Estilos globales para index, lobby, game, vote y results
+   ============================================================== */
+
+/* 1) Importar la fuente desde Google Fonts (Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 2) Reset, tipografía global y forzar altura mínima en todo el viewport */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;              /* <- IMPORTANTE: obligamos a que ocupen el 100% de la ventana */
+  margin: 0;
+  padding: 0;
+}
 body {
-    background-color: #EEE;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  /* Fondo general con imagen en img/fondo.png */
+  background: url("../img/fondo.png") no-repeat center center/cover;
+  color: #333;
+  text-align: center; /* Centra automáticamente <h1>, <p>, etc. */
 }
 
-.container {
-    margin-top: 20px;
+/* 3) Encabezados */
+h1 {
+  margin: 20px 0;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+}
+h2 {
+  margin: 15px 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #444;
 }
 
-canvas {
-    display: block;
-    margin: 20px auto;
-    background: #FFF;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px #AAA;
-    cursor: crosshair;
-}
-
-#palabra {
-    font-size: 24px;
-    margin: 20px;
-    font-weight: bold;
-}
-
+/* 4) Botones generales */
 button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #45a049;
 }
 
+/* Botones específicos */
+#jugarBtn,
+button#volverLobby {
+  background-color: #2196F3;
+}
+#jugarBtn:hover,
+button#volverLobby:hover {
+  background-color: #1976D2;
+}
+
+/* Botón de enviar voto */
+button#enviarVoto {
+  background-color: #FF9800;
+}
+button#enviarVoto:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 5) Contenedores “card-like” con fondo semi-transparente */
+#infoJugador,
+#palabraJuego,
+#cronometro,
+#dibujoMostrado,
+#votacion,
+#ganador,
+#jugadores {
+  background: rgba(255, 255, 255, 0.85);
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+/* 6) Centramos los <canvas> y les agregamos un fondo sólido */
+#canvas,
+#canvasVoto {
+  display: block;            /* Para que margin:auto funcione */
+  margin: 15px auto;         /* 15px arriba/abajo, auto centrado */
+  border: 2px solid #666;    /* Borde gris */
+  background-color: #ffffff; /* Fondo blanco opaco */
+}
+
+/* 7) Texto dentro del juego */
+#infoJugador,
+#palabraJuego,
 #cronometro {
-    font-size: 20px;
-    margin: 10px;
-    color: #333;
+  font-size: 1.1rem;
+}
+
+/* 8) Página de votación (vote.html) */
+#dibujoMostrado p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+#votacion p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+#estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+#estrellas span {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#estrellas span:hover {
+  transform: scale(1.2);
+}
+#estrellas span.seleccionado {
+  color: gold;
+  transform: scale(1.2);
+}
+
+/* 9) Página de resultados (results.html) */
+#ganador {
+  text-align: center;
+}
+#ganador p {
+  font-size: 1.3rem;
+  margin: 8px 0;
+}
+
+/* 10) Página de lobby (lobby.html) */
+#jugadores ul,
+#listaJugadores {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+#jugadores li,
+#listaJugadores li {
+  background: #e0e0e0;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* 11) Textos generales */
+p,
+span,
+strong {
+  font-family: inherit;
+  color: inherit;
 }
