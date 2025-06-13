@@ -101,7 +101,7 @@ function oMousePos(canvas, evt) {
   };
 }
 
-let tiempoRestante = 10;
+let tiempoRestante = 60;
 cronometroElemento.textContent = `Tiempo: ${tiempoRestante}s`;
 
 let intervaloTiempo = setInterval(() => {
