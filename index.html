@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio - Juego de Dibujo</title>
+
     <link rel="stylesheet" href="CSS/style.css">
+     <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
     <h1>Bienvenido al Juego de Dibujo</h1>
     <button onclick="window.location.href='lobby.html'">Entrar al Lobby</button>
+     <script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('sw.js',{scope:'./'});
+            }
+        </script>
 </body>
   <!-- >>> PIE DE PÁGINA ORIGINAL <<< -->
   <footer>
